@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header>
       <Container>
-        <Jumbotron className="bg-light text-white">
+        <Jumbotron className="bg-light text-white mb-4">
           <Container className="text-left">
             <h1>Google Books Search</h1>
             <h4 className="font-weight-light">Find and Save Your Favorite Books</h4>
