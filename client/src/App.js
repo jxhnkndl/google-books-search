@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import API from './utils/API';
 import MainNav from './components/MainNav';
 import Header from './components/Header';
+import Container from 'react-bootstrap/Container';
 import Search from './components/Search';
 import Saved from './components/Saved';
 import Footer from './components/Footer';
@@ -26,10 +27,12 @@ export default function App() {
         <MainNav />
         <Header />
         <main>
-          <Switch>
-            <Route exact path={["/", "/home", "/search"]} component={Search} />
-            <Route exact path={"/saved"} component={Saved} />
-          </Switch>
+          <Container>
+            <Switch>
+              <Route exact path={["/", "/home", "/search"]} component={Search} />
+              <Route exact path={"/saved"} component={Saved} />
+            </Switch>
+          </Container>
         </main>
         <Footer />
       </Router>
