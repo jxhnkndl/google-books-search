@@ -10,8 +10,8 @@ export default function MainNav() {
     <Navbar bg="dark" variant="dark" className="main-nav">
       <Navbar.Brand href="#home">Google Books</Navbar.Brand>
       <Nav>
-        <Nav.Link href="#search">Search</Nav.Link>
-        <Nav.Link href="#saved">Saved</Nav.Link>
+        <Nav.Link href="/search">Search</Nav.Link>
+        <Nav.Link href="/saved">Saved</Nav.Link>
       </Nav>
     </Navbar>
   );

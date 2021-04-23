@@ -1,9 +1,11 @@
 // Import dependencies
 import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import API from './utils/API';
 import MainNav from './components/MainNav';
-import Container from 'react-bootstrap/Container'
 import Header from './components/Header';
+import Search from './components/Search';
+import Saved from './components/Saved';
 import Footer from './components/Footer';
 import './App.scss';
 
@@ -20,12 +22,17 @@ export default function App() {
 
   return (
     <div className="app-container bg-dark">
-      <MainNav />
-      <Header />
-      <main>
-        
-      </main>
-      <Footer />
+      <Router>
+        <MainNav />
+        <Header />
+        <main>
+          <Switch>
+            <Route exact path={["/", "/home", "/search"]} component={Search} />
+            <Route exact path={"/saved"} component={Saved} />
+          </Switch>
+        </main>
+        <Footer />
+      </Router>
     </div>
   );
 }
