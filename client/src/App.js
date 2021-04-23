@@ -1,6 +1,8 @@
 // Import dependencies
 import React from 'react';
 import API from './utils/API';
+import MainNav from './components/MainNav';
+import Header from './components/Header';
 import Button from 'react-bootstrap/Button';
 
 // Create and export App component
@@ -15,11 +17,9 @@ export default function App() {
   };
 
   return (
-    <div className="p-5 text-center">
-      <h1>I'M ONLINE!</h1>
-      <Button variant="info" onClick={fetchBooks}>
-        GET GIGS
-      </Button>
+    <div className="text-center">
+      <MainNav />
+      <Header />
     </div>
   );
 }
