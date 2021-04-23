@@ -2,8 +2,9 @@
 import React from 'react';
 import API from './utils/API';
 import MainNav from './components/MainNav';
+import Container from 'react-bootstrap/Container'
 import Header from './components/Header';
-import Button from 'react-bootstrap/Button';
+import './App.scss';
 
 // Create and export App component
 export default function App() {
@@ -17,9 +18,11 @@ export default function App() {
   };
 
   return (
-    <div className="text-center">
+    <div className="bg-dark">
       <MainNav />
-      <Header />
+      <Container>
+        <Header />
+      </Container>
     </div>
   );
 }
