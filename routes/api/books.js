@@ -4,7 +4,8 @@ const booksController = require("../../controllers/booksController");
 
 // Routes that match "/api/books" endpoint
 router.route("/")
-  .get(booksController.findAllBooks);
+  .get(booksController.getBooks)
+  .post(booksController.addBook)
 
 // Export API router
 module.exports = router;
