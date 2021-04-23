@@ -19,4 +19,13 @@ module.exports = {
       res.status(422).json({ success: false, msg: err });
     }
   },
+  deleteBook: async function (req, res) {
+    try {
+      const { id } = req.params;
+      const results = await db.Book.deleteOne({ _id: id });
+      res.json(results);
+    } catch (err) {
+      res.status(422).json({ success: false, msg: err });
+    }
+  }
 };

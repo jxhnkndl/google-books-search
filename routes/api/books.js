@@ -6,6 +6,7 @@ const booksController = require("../../controllers/booksController");
 router.route("/")
   .get(booksController.getBooks)
   .post(booksController.addBook)
+  .delete(booksController.deleteBook);
 
 // Export API router
 module.exports = router;
