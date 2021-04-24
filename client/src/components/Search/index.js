@@ -7,11 +7,11 @@ import BooksContainer from '../BooksContainer';
 export default function Search() {
   return (
     <section>
-      <div className="bg-light rounded p-3 mb-4">
+      <div className="bg-light rounded p-5 mb-4">
         <h3 className="text-secondary">Book Search</h3>
         <SearchForm />
       </div>
-      <div className="bg-light rounded p-3">
+      <div className="bg-light rounded p-5">
         <BooksContainer />
       </div>
     </section>
