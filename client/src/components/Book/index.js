@@ -1,6 +1,6 @@
 // Import modules
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { formatAuthors } from '../../utils/bookFormatting';
 import Button from 'react-bootstrap/Button';
 import Image, { propTypes } from 'react-bootstrap/Image';
@@ -8,6 +8,10 @@ import Image, { propTypes } from 'react-bootstrap/Image';
 // Create and export Book component
 export default function Book(props) {
   const location = useLocation();
+
+  const handleBtnView = () => {
+    window.location.href = props.link;
+  }
 
   // Returned component to render
   return (
@@ -20,7 +24,7 @@ export default function Book(props) {
           <p className="h5 text-white">{props.title}</p>
           <p>{formatAuthors(props.authors)}</p>
           <p>{props.description}</p>
-          <Button className="py-2 px-4 mr-2" variant="primary">
+          <Button className="py-2 px-4 mr-2" variant="primary" onClick={handleBtnView}>
             View
           </Button>
           {location.pathname === '/search' ? (
