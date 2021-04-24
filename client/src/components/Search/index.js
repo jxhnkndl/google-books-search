@@ -13,12 +13,12 @@ export default function Search() {
   const results = bookData;
 
   return (
-    <section>
-      <div className="bg-light rounded p-5 mb-4">
-        <h3 className="text-secondary">Book Search</h3>
+    <section className="mt-4">
+      <div className="rounded px-5 pt-5 pb-1">
+        <h3 className="text-secondary">Search Google Books</h3>
         <SearchForm />
       </div>
-      <div className="books-container bg-light rounded p-5">
+      <div className="rounded p-5">
         <h4 className="text-secondary">Results</h4>
         {results.map((book, index) => {
           return (

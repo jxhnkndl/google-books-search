@@ -10,12 +10,12 @@ export default function SearchForm() {
     <Form>
       <Form.Group controlId="form-title">
         <Form.Control
-          className="input bg-light text-white"
+          className="input bg-dark text-secondary"
           type="text"
           placeholder="Enter a Book Title..."
         />
       </Form.Group>
-      <Button variant="secondary">Search</Button>
+      <Button variant="primary">Search</Button>
     </Form>
   );
 }
