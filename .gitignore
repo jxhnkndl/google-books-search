@@ -19,6 +19,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # workflow
-sandbox.js
 notes.txt
+sandbox.js
+/client/src/testData.js
 /scripts/testSeed.js
