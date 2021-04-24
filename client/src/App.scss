@@ -1,15 +1,11 @@
 // Overwrite default Bootstrap colors
-$dark: #15202B;
+$dark: #15202b;
 $light: #192734;
+$primary: #0092e3;
 $secondary: #8899A6;
 
 // Import Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-// Universal and inherited styles
-p {
-  margin-bottom: 0;
-}
 
 // Ensure app stretches full viewport height
 .app-container {

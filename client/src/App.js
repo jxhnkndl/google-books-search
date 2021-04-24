@@ -25,7 +25,7 @@ export default function App() {
       <Router>
         <MainNav />
         <Header />
-        <main className="container">
+        <main className="container mb-5">
           <Switch>
             <Route exact path={["/", "/search"]} component={Search} />
             <Route exact path={"/saved"} component={Saved} />
