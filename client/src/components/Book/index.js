@@ -16,7 +16,7 @@ export default function Book(props) {
     if (authors.length === 2) {
       return `${authors[0]} and ${authors[1]}`;
     }
-
+    
     if (authors.length > 2) {
       let output = '';
       authors.forEach((author, index) => {
@@ -32,7 +32,7 @@ export default function Book(props) {
 
   // Returned component to render
   return (
-    <div className="book bg-dark text-secondary rounded p-4 my-3">
+    <div className="book bg-light text-secondary rounded p-4 my-3">
       <div className="row">
         <div className="col-12 col-md-2">
           <Image src={props.image} rounded fluid />
@@ -41,8 +41,12 @@ export default function Book(props) {
           <p className="h5 text-white">{props.title}</p>
           <p>{formatAuthors()}</p>
           <p>{props.description}</p>
-          <Button className="py-2 px-4 mr-2" variant="primary">View</Button>
-          <Button className="py-2 px-4 mr-2" variant="secondary">Save</Button>
+          <Button className="py-2 px-4 mr-2" variant="primary">
+            View
+          </Button>
+          <Button className="py-2 px-4 mr-2" variant="secondary">
+            Save
+          </Button>
         </div>
       </div>
     </div>
