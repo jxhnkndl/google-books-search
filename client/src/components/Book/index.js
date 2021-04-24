@@ -1,34 +1,13 @@
 // Import modules
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { formatAuthors } from '../../utils/bookFormatting';
 import Button from 'react-bootstrap/Button';
 import Image, { propTypes } from 'react-bootstrap/Image';
 
 // Create and export Book component
 export default function Book(props) {
-  // Reduce authors array down to a single string
-  const formatAuthors = () => {
-    const { authors } = props;
-
-    if (authors.length === 1) {
-      return authors[0];
-    }
-
-    if (authors.length === 2) {
-      return `${authors[0]} and ${authors[1]}`;
-    }
-    
-    if (authors.length > 2) {
-      let output = '';
-      authors.forEach((author, index) => {
-        if (index === authors.length - 1) {
-          output += `and ${author}`;
-        } else {
-          output += `${author}, `;
-        }
-      });
-      return output;
-    }
-  };
+  const location = useLocation();
 
   // Returned component to render
   return (
@@ -39,14 +18,20 @@ export default function Book(props) {
         </div>
         <div className="col-12 col-md-10">
           <p className="h5 text-white">{props.title}</p>
-          <p>{formatAuthors()}</p>
+          <p>{formatAuthors(props.authors)}</p>
           <p>{props.description}</p>
           <Button className="py-2 px-4 mr-2" variant="primary">
             View
           </Button>
-          <Button className="py-2 px-4 mr-2" variant="secondary">
-            Save
-          </Button>
+          {location.pathname === '/search' ? (
+            <Button className="py-2 px-4 mr-2" variant="secondary">
+              Save
+            </Button>
+          ) : (
+            <Button className="py-2 px-4 mr-2" variant="danger">
+              Delete
+            </Button>
+          )}
         </div>
       </div>
     </div>
