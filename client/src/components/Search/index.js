@@ -13,7 +13,7 @@ export default function Search() {
   const results = bookData;
 
   return (
-    <section className="mt-4">
+    <section>
       <div className="rounded px-5 pt-5 pb-1">
         <h3 className="text-secondary">Search Google Books</h3>
         <SearchForm />
