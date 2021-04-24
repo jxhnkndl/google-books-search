@@ -1,20 +1,17 @@
 // Import dependencies
 import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
 
 // Create and export Header component
 export default function Header() {
   return (
-    <header>
-      <Container>
-        <Jumbotron className="bg-light text-white mb-4">
-          <Container className="text-left">
-            <h1>Google Books Search</h1>
-            <h4 className="font-weight-light">Find and Save Your Favorite Books</h4>
-          </Container>
-        </Jumbotron>
-      </Container>
+    <header className="container">
+      <Jumbotron className="bg-light text-white p-5 mb-4">
+        <div className="text-left">
+          <h1>Google Books Search</h1>
+          <h4 className="font-weight-light">Find and Save Your Favorite Books</h4>
+        </div>
+      </Jumbotron>
     </header>
   );
 }
