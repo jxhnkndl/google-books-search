@@ -1,6 +1,6 @@
 // Import dependencies
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import API from './utils/API';
 import MainNav from './components/MainNav';
 import Header from './components/Header';
