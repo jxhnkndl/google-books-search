@@ -2,9 +2,6 @@
 import React from 'react';
 import Book from '../Book';
 
-// Temporary book data for designing and testing components
-import bookData from '../../testData';
-
 // Create and export Search page component
 export default function Saved(props) {
   // Temporary assign testing data to results state
