@@ -20,7 +20,7 @@ export default function Search() {
     try {
       const books = await API.search(query);
       setResults(books.data.items);
-      setQuery("");
+      setQuery('');
     } catch (err) {
       console.log(err);
     }
@@ -38,11 +38,16 @@ export default function Search() {
               className="input bg-dark text-secondary"
               type="text"
               placeholder="Enter a Book Title..."
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) => {
+                if (query === '') {
+                  setResults([]);
+                }
+                setQuery(event.target.value);
+              }}
               value={query}
             />
           </Form.Group>
-          <Button variant="primary" onClick={handleSubmit}>
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
             Search
           </Button>
         </Form>
@@ -54,6 +59,7 @@ export default function Search() {
         <div className="rounded p-5">
           <h4 className="text-secondary">Results</h4>
           {results.map((book, index) => {
+            // Destructure required properties
             const {
               id,
               authors,
@@ -63,12 +69,14 @@ export default function Search() {
               title,
             } = book.volumeInfo;
 
-            if (!imageLinks) {
+            // Skip over the result if a key field is missing
+            if (!authors || !description || !title || !imageLinks) {
               return;
             }
 
+            // Render Book components for up to 20 results
             return (
-              <Book 
+              <Book
                 key={index}
                 id={index}
                 title={title}

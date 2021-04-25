@@ -24,7 +24,7 @@ export default function Book(props) {
   // Redirect browser to Google Books info page
   const handleBtnView = () => {
     window.location.href = props.link;
-  }
+  };
 
   // Save book to database
   const handleSaveBook = async () => {
@@ -35,11 +35,14 @@ export default function Book(props) {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   // Returned component to render
   return (
-    <div id={props.id} className="book bg-light text-secondary rounded p-4 my-3">
+    <div
+      id={props.id}
+      className="book bg-light text-secondary rounded p-4 my-3"
+    >
       <div className="row">
         <div className="col-12 col-md-2">
           <Image src={props.image} rounded fluid />
@@ -48,11 +51,21 @@ export default function Book(props) {
           <p className="h5 text-white">{props.title}</p>
           <p>{formatAuthors(props.authors)}</p>
           <p>{props.description}</p>
-          <Button className="py-2 px-4 mr-2" variant="primary" onClick={handleBtnView}>
+          <Button
+            className="py-2 px-4 mr-2"
+            variant="primary"
+            onClick={handleBtnView}
+          >
             View
           </Button>
+
+          {/* Conditionally render a Save button or Delete button based on route location */}
           {location.pathname === '/search' || location.pathname === '/' ? (
-            <Button className="py-2 px-4 mr-2" variant="secondary" onClick={() => handleSaveBook()}>
+            <Button
+              className="py-2 px-4 mr-2"
+              variant="secondary"
+              onClick={() => handleSaveBook()}
+            >
               Save
             </Button>
           ) : (
