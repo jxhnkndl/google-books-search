@@ -51,7 +51,7 @@ export default function Book(props) {
           <Button className="py-2 px-4 mr-2" variant="primary" onClick={handleBtnView}>
             View
           </Button>
-          {location.pathname === '/search' ? (
+          {location.pathname === '/search' || location.pathname === '/' ? (
             <Button className="py-2 px-4 mr-2" variant="secondary" onClick={() => handleSaveBook()}>
               Save
             </Button>
