@@ -70,6 +70,7 @@ export default function Search() {
             return (
               <Book 
                 key={index}
+                id={index}
                 title={title}
                 authors={authors}
                 description={description}
