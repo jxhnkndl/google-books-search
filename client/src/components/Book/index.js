@@ -10,6 +10,7 @@ import API from '../../utils/API';
 export default function Book(props) {
   // Set this result's bookData state to the props passed in from the API response
   const [bookData, setBookData] = useState({
+    id: props._id,
     title: props.title,
     authors: props.authors,
     description: props.description,
