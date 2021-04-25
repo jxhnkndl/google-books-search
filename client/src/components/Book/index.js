@@ -37,6 +37,18 @@ export default function Book(props) {
     }
   };
 
+  // Delete book from database and update savedBooks state
+  const handleDeleteBook = async (id) => {
+    try {
+      const response = await API.deleteBook(id);
+      console.log(response);
+      console.log('Book deleted.');
+      props.loadBooks();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   // Returned component to render
   return (
     <div
@@ -69,7 +81,11 @@ export default function Book(props) {
               Save
             </Button>
           ) : (
-            <Button className="py-2 px-4 mr-2" variant="danger">
+            <Button
+              className="py-2 px-4 mr-2"
+              variant="danger"
+              onClick={() => handleDeleteBook(props.id)}
+            >
               Delete
             </Button>
           )}

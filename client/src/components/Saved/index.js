@@ -17,7 +17,6 @@ export default function Saved(props) {
   const loadBooks = async () => {
     try {
       const results = await API.getBooks();
-      console.log(results);
       setSavedBooks(results.data);
     } catch (err) {
       console.log(err);
@@ -40,6 +39,7 @@ export default function Saved(props) {
                 description={book.description}
                 image={book.image}
                 link={book.link}
+                loadBooks={loadBooks}
               />
             );
           })}
