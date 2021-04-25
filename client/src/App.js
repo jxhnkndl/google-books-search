@@ -1,6 +1,6 @@
 // Import dependencies
 import React from 'react';
-import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import API from './utils/API';
 import MainNav from './components/MainNav';
 import Header from './components/Header';
@@ -27,7 +27,8 @@ export default function App() {
         <Header />
         <main className="container mb-5">
           <Switch>
-            <Route exact path={["/", "/search"]} component={Search} />
+            <Route exact path={"/"} component={Search} />
+            <Route exact path={"/search"} component={Search} />
             <Route exact path={"/saved"} component={Saved} />
           </Switch>
         </main>
