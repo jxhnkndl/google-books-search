@@ -12,7 +12,7 @@ import bookData from '../../testData';
 // Create and export Search page component
 export default function Search() {
   // Create stateful properties
-  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [bookObj, setBookObj] = useState({});
 
@@ -20,11 +20,16 @@ export default function Search() {
     setResults(bookData);
   }, []);
 
-  // Search input change hanlder
-  const handleInputChange = () => {
-    const { value } = event.target;
-    setSearch(value);
-    console.log(search);
+  // Execute search for title using Google Books API
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const results = await API.search(query);
+      setResults(results.data);
+      console.log(results);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   // Final rendered component
@@ -38,11 +43,10 @@ export default function Search() {
               className="input bg-dark text-secondary"
               type="text"
               placeholder="Enter a Book Title..."
-
-              onChange={handleInputChange}
+              onChange={(event) => setQuery(event.target.value)}
             />
           </Form.Group>
-          <Button variant="primary">Search</Button>
+          <Button variant="primary" onClick={handleSubmit}>Search</Button>
         </Form>
       </div>
       <div className="rounded p-5">
