@@ -24,3 +24,14 @@ export const formatAuthors = (authors) => {
     return output;
   }
 };
+
+// Convert info link from http to https
+export const formatLink = (link) => {
+  if (link.charAt(4) === 's') {
+    return link;
+  }
+
+  const linkArr = link.split(':');
+  linkArr.splice(1, 0, 's:');
+  return linkArr.join('');
+}

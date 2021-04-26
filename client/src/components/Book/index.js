@@ -1,7 +1,7 @@
 // Import modules
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { formatAuthors } from '../../utils/bookFormatting';
+import { formatAuthors, formatLink } from '../../utils/bookFormatting';
 import Button from 'react-bootstrap/Button';
 import Image, { propTypes } from 'react-bootstrap/Image';
 import { toast } from 'react-toastify';
@@ -16,7 +16,7 @@ export default function Book(props) {
     authors: props.authors,
     description: props.description,
     image: props.image,
-    link: props.link,
+    link: formatLink(props.link),
   });
 
   // Capture application location to use in button rendering
@@ -69,10 +69,10 @@ export default function Book(props) {
           <p>{formatAuthors(props.authors)}</p>
           <p>{props.description}</p>
           <a
-            href={props.link}
+            href={formatLink(props.link)}
             className="btn btn-primary py-2 px-4 mr-2"
-            // variant="primary"
-            // onClick={handleBtnView}
+            target="_blank"
+            rel='noopener noreferrer'
           >
             View
           </a>
