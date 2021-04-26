@@ -18,7 +18,7 @@
 
 
 ## Deployed Application
-Visit the deployed application here: [Fitness Tracker](https://react-books-finder.herokuapp.com/search)
+Visit the deployed application here: [Book Finder](https://react-books-finder.herokuapp.com/search)
 
 
 ## Description
