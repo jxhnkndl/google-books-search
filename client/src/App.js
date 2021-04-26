@@ -7,7 +7,11 @@ import Header from './components/Header';
 import Search from './components/Search';
 import Saved from './components/Saved';
 import Footer from './components/Footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
+
+// Toast
 
 // Create and export App component
 export default function App() {
@@ -24,6 +28,13 @@ export default function App() {
           </Switch>
         </main>
         <Footer />
+        <ToastContainer 
+          position="top-right"
+          autoClose={3000}
+          hideProgressionBar={false}
+          newestOnTop
+          closeOnClick
+        />
       </Router>
     </div>
   );

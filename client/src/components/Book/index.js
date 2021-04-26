@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { formatAuthors } from '../../utils/bookFormatting';
 import Button from 'react-bootstrap/Button';
 import Image, { propTypes } from 'react-bootstrap/Image';
+import { toast } from 'react-toastify';
 import API from '../../utils/API';
 
 // Create and export Book component
@@ -32,7 +33,9 @@ export default function Book(props) {
       const response = await API.saveBook(bookData);
       console.log(response);
       console.log('Book saved.');
+      toast.success('Book saved! 🍎');
     } catch (err) {
+      toast.error('Uh oh! Looks like something went wrong. Can you try again? 🧐');
       console.log(err);
     }
   };
@@ -43,8 +46,10 @@ export default function Book(props) {
       const response = await API.deleteBook(id);
       console.log(response);
       console.log('Book deleted.');
+      toast.success('Book deleted! 🍎');
       props.loadBooks();
     } catch (err) {
+      toast.error('Uh oh! Looks like something went wrong. Can you try again? 🧐');
       console.log(err);
     }
   };
