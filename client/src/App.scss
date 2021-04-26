@@ -19,3 +19,13 @@ $secondary: #8899A6;
 main {
   flex: auto;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+}

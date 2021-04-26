@@ -57,7 +57,7 @@ export default function Book(props) {
       className="book bg-light text-secondary rounded p-4 my-3"
     >
       <div className="row">
-        <div className="col-12 col-md-2">
+        <div className="col-12 col-md-2 mb-3">
           <Image src={props.image} rounded fluid />
         </div>
         <div className="col-12 col-md-10">
@@ -66,7 +66,7 @@ export default function Book(props) {
           <p>{props.description}</p>
           <a
             href={formatLink(props.link)}
-            className="btn btn-primary py-2 px-4 mr-2"
+            className="btn btn-primary py-2 px-4 mr-2 my-2"
             target="_blank"
             rel='noopener noreferrer'
           >
@@ -77,7 +77,7 @@ export default function Book(props) {
           {/* Conditionally render a Save button or Delete button based on route location */}
           {location.pathname === '/search' || location.pathname === '/' ? (
             <Button
-              className="py-2 px-4 mr-2"
+              className="py-2 px-4 mr-2 my-2"
               variant="secondary"
               onClick={() => handleSaveBook()}
             >
@@ -86,7 +86,7 @@ export default function Book(props) {
             </Button>
           ) : (
             <Button
-              className="py-2 px-4 mr-2"
+              className="py-2 px-4 mr-2 my-2"
               variant="danger"
               onClick={() => handleDeleteBook(props.id)}
             >
