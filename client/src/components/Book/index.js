@@ -68,13 +68,14 @@ export default function Book(props) {
           <p className="h5 text-white">{props.title}</p>
           <p>{formatAuthors(props.authors)}</p>
           <p>{props.description}</p>
-          <Button
-            className="py-2 px-4 mr-2"
-            variant="primary"
-            onClick={handleBtnView}
+          <a
+            href={props.link}
+            className="btn btn-primary py-2 px-4 mr-2"
+            // variant="primary"
+            // onClick={handleBtnView}
           >
             View
-          </Button>
+          </a>
 
           {/* Conditionally render a Save button or Delete button based on route location */}
           {location.pathname === '/search' || location.pathname === '/' ? (
