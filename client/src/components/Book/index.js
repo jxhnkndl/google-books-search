@@ -31,8 +31,6 @@ export default function Book(props) {
   const handleSaveBook = async () => {
     try {
       const response = await API.saveBook(bookData);
-      console.log(response);
-      console.log('Book saved.');
       toast.success('Book saved! 🍎');
     } catch (err) {
       toast.error('Uh oh! Looks like something went wrong. Can you try again? 🧐');
@@ -44,8 +42,6 @@ export default function Book(props) {
   const handleDeleteBook = async (id) => {
     try {
       const response = await API.deleteBook(id);
-      console.log(response);
-      console.log('Book deleted.');
       toast.success('Book deleted! 🍎');
       props.loadBooks();
     } catch (err) {
