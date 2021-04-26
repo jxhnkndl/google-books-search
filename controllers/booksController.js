@@ -5,7 +5,7 @@ const db = require('../models');
 module.exports = {
   getBooks: async function (req, res) {
     try {
-      const results = await db.Book.find({});
+      const results = await db.Book.find({}).sort({ date: -1 });
       res.json(results);
     } catch (err) {
       res.status(422).json({ success: false, msg: err });
