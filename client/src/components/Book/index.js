@@ -70,6 +70,7 @@ export default function Book(props) {
             target="_blank"
             rel='noopener noreferrer'
           >
+            <i class="fas fa-external-link-alt mr-2"></i>
             View
           </a>
 
@@ -80,6 +81,7 @@ export default function Book(props) {
               variant="secondary"
               onClick={() => handleSaveBook()}
             >
+              <i class="fas fa-bookmark mr-2"></i>
               Save
             </Button>
           ) : (
@@ -88,6 +90,7 @@ export default function Book(props) {
               variant="danger"
               onClick={() => handleDeleteBook(props.id)}
             >
+              <i class="far fa-trash-alt mr-2 "></i>
               Delete
             </Button>
           )}

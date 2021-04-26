@@ -48,6 +48,7 @@ export default function Search() {
             />
           </Form.Group>
           <Button variant="primary" type="submit" onClick={handleSubmit}>
+            <i class="fas fa-search mr-2"></i>
             Search
           </Button>
         </Form>
