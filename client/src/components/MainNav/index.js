@@ -8,7 +8,7 @@ import './index.scss';
 export default function MainNav() {
   return(
     <Navbar bg="dark" variant="dark" className="main-nav">
-      <Navbar.Brand href="/">Google Books</Navbar.Brand>
+      <Navbar.Brand href="/">Book Finder</Navbar.Brand>
       <Nav>
         <Nav.Link href="/search">Search</Nav.Link>
         <Nav.Link href="/saved">Saved</Nav.Link>

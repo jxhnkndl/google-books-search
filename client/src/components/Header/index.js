@@ -9,7 +9,7 @@ const styles = {
     backgroundSize: 'cover',
   },
   jumbotron: {
-    backgroundColor: 'rgba(21, 32, 43, 0.6)',
+    backgroundColor: 'rgba(21, 32, 43, 0.7)',
   }
 };
 
@@ -19,8 +19,8 @@ export default function Header() {
     <header style={styles.header}>
       <Jumbotron style={styles.jumbotron} className="text-white p-5 mb-0">
         <div className="text-left">
-          <h1>Google Books Search</h1>
-          <h4 className="font-weight-light">Find and Save Your Favorite Books</h4>
+          <h1>Find and save your favorite books</h1>
+          <h4 className="font-weight-light">Powered by Google Books API</h4>
         </div>
       </Jumbotron>
     </header>
